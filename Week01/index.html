@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- this specifies the character set encoding.
+     without this tag our fonts might not load properly -->
+    <meta charset="utf-8" />
+    <!-- the viewport tag sets the initial scale and ensures
+     proper responsive behavior -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The title tag shows up in the browser tab and as the big blue link in search results -->
+    <title>HTML Stuff</title>
+    <style>
+      p{
+        color:green
+      }
+      .nyu{
+        color:blueviolet
+      }
+    </style>
+  </head>
+  <body>
+    <!-- everything inside the body tag shows up to the user unless
+     modified to not be visible with css -->
+
+    <!-- ONLY 1 H1 per page -->
+    <h1 id="top">Heading 1 is the most important text on the page. Only one per page.</h1>
+    <h2>As the heading numbers get bigger, the text gets smaller. All still boldish weight, and they are all more important than any other text tags.</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <hr />
+    <p>
+      <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </em>Vivamus venenatis bibendum aliquet. Cras non nunc eu justo mattis tempus. <br />Duis porttitor in nisl quis lobortis. Praesent quis dui efficitur justo congue lobortis. Sed iaculis nulla nec tellus sagittis, ac pellentesque nulla vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. <br />Etiam vel consequat nisl, in aliquam enim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer velit arcu, pretium in pharetra facilisis, molestie sed urna. In eget bibendum diam. Aliquam tempus, elit ac laoreet auctor, odio sem sodales nisl, ac aliquam enim tellus a erat. Praesent erat sapien, iaculis vitae nunc vel, tincidunt ultricies orci.
+    </p>
+    <p>
+      <span style="color: red">Suspendisse id ornare purus. </span>Donec ac semper nisl, ac <a href="https://www.condimentum.co.uk/">condimentum</a> erat. Donec at malesuada ex. Donec in risus rhoncus, imperdiet odio ut, consectetur ipsum. Nullam vitae pellentesque arcu. Cras eu rutrum erat. Etiam nec gravida lectus. Donec blandit orci vestibulum elementum pellentesque.
+    </p>
+    <p class="nyu">
+      <strong>Donec dignissim tristique augue nec dapibus. </strong>Quisque neque metus, luctus in lorem eget, lacinia semper velit. Donec ultrices orci a lectus gravida pharetra. Nullam laoreet quam tortor, gravida pulvinar augue mollis eu. Quisque vulputate dignissim posuere. Nulla molestie vel dolor vitae ornare. Donec malesuada mattis libero, nec varius nisl pulvinar et. Ut hendrerit euismod diam et dapibus. Nunc tempus, risus quis porttitor posuere, augue turpis venenatis ante, sed venenatis elit enim id eros. Duis euismod sodales quam ac porta. Nulla lacinia maximus quam. Suspendisse facilisis elit magna, ut tempus neque accumsan eu. Aenean euismod vitae nibh vel sagittis. Suspendisse varius metus elit, ut convallis nisi porta luctus. Etiam in nulla quam.
+    </p>
+
+    <h2>Yummy Pancakes</h2>
+    <p>A description of pancakes. No one wants to read this but everyone seems to write a bunch here on recipe sites. </p>
+    <!-- this is an image from external url -->
+    <img 
+    src="https://wearenotmartha.com/wp-content/uploads/mm-pancakes-featured.jpg"
+    alt="Yummiest Pancakes"
+    />
+    <ul>
+      <li>flour</li>
+      <li>sugar</li>
+      <li>eggs</li>
+      <li>butter</li>
+    </ul>
+    <ol>
+      <Li>mix it up</Li>
+      <Li>heat it up</Li>
+      <Li>pour some batter</Li>
+      <Li>flip it</Li>
+      <Li>eat itttttt yumyumyum</Li>
+    </ol>
+
+    <hr />
+
+    <ul>
+      <li>flour</li>
+      <li>sugar</li>
+      <li>eggs</li>
+      <li>
+        butter
+        <ol>
+        <li>sublist-item 1</li>
+        <li>sublist-item 2</li>
+        <li>sublist-item 3</li>
+      </ol></li>
+    </ul>
+    <ol>
+      <Li>mix it up</Li>
+      <Li>heat it up</Li>
+      <Li>pour some batter</Li>
+      <Li>flip it</Li>
+      <Li>eat itttttt yumyumyum</Li>
+    </ol>
+
+    <!-- anchor tag linking to another element on the same page by ID -->
+     <a href="#top">Back to top</a>
+  </body>
+</html>
