@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Week 2 Class 1</title>
+  </head>
+  <body>
+    <h1>HTML Form Elements</h1>
+
+    <!-- Form using basic input types -->
+
+    <form 
+    action="create_profile.js" 
+    name="user_create" 
+    target="_self" 
+    method="GET"
+    >
+    <fieldset>
+        <legend>Simple Text Input</legend>
+        <p>This is your most basic text input. We change input types by changing the value of the type attribute.</p>
+
+        <label for="first_name">First Name:</label>
+        <br />
+        <input type="text" name="first_name"placeholder="Ella" disabled/>
+        
+        <br />
+        <label for="last_name">Last Name:</label>
+        <br />
+        <input type="text" name="last_name" placeholder="Rivard"/>
+
+        <br />
+        <label for="random_stuff">Random Stuff:</label>
+        <br />
+        <input type="text" name="random_stuff" maxlength="10" placeholder="Words"/>
+        <br />
+        <br />
+     </fieldset>
+
+     <fieldset>
+        <br />
+        <legend>Text Area</legend>
+        <label for="why_class">Why did you take this class? (Required)</label>
+        <br />
+        <textarea name=""why-class" cols="50" rows="5" required></textarea>
+        <br />
+        <br />
+     </fieldset>
+
+     <fieldset>
+        <legend>Common Input Types</legend>
+        <br />
+        <label for="cost">Cost:</label>
+        <br />
+        <input name="cost" type="number" min="10" max="100" step="0.5"/>
+        <br />
+        <label for="password">Password:</label>
+        <br />
+        <input type="password" name="password" />
+        <br />
+        <label for="color">Color:</label>
+        <br />
+        <input type="color" name="color" />
+        <br />
+        <br />
+     </fieldset>
+
+     <fieldset>
+        <legend>Check boxes</legend>
+        <p>What kind of pets do you have?</p>
+        <input type="checkbox" name="pet" value="dog"/> <label>Dog</label>
+        <input type="checkbox" name="pet" value="cat"/> <label>Cat</label>
+        <input type="checkbox" name="pet" value="chicken"/> <label>Chicken</label>
+        <input type="checkbox" name="pet" value="lizard"/> <label>Lizard</label>
+        <br />
+        <br />
+     </fieldset>
+
+     <fieldset>
+        <legend>Radio Fields</legend>
+        <p>Which pet is your favorite?</p>
+        <input type="radio" name="favorite_pet" value="dog"/> <label>Dog</label>
+        <input type="radio" name="favorite_pet" value="cat"/> <label>Cat</label>
+        <input type="radio" name="favorite_pet" value="chicken"/> <label>Chicken</label>
+        <input type="radio" name="favorite_pet" value="lizard"/> <label>Lizard</label>
+        <br />
+        <br />
+     </fieldset>
+
+     <fieldset>
+        <legend>Select Option Dropdowns</legend>
+        <label for="state">Favorite state with "New" in it</label>
+        <br />
+        <select name="state">
+            <option value="NY">New York</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NM">New Mexico</option>
+        </select>
+     </fieldset>
+
+     <br/>
+
+     <input type="button" value="Submit" name="submit_profile" disabled/>
+     <button title="This is a disabled submit button using the button tag">Create Profile</button>
+    </form>
+
+
+  </body>
+</html>
