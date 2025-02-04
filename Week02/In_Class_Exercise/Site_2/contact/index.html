@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Us Site 2</title>
+    <meta
+      name="description"
+      content="Method 2 - Each Page as Own Directory Folder with Index.html within"
+    />
+  </head>
+
+  <body>
+    <!-- Place your Nav Links Here -->
+    <nav>
+      <!-- use UL LI and A for Nav Links within our NAV tag -->
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li><a href="../contact/index.html">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>Contact Us</h1>
+    <!-- Bonus - Place Images Here -->
+    <!-- Double Bonus - Add Contact Form Here -->
+
+    <form name="leave_comment" method="POST">
+    <fieldset>
+        <legend>Leave a comment below</legend>
+
+        <label for="first_name">First Name:</label>
+        <br />
+        <input type="text" name="first_name"placeholder="Ella" required/>
+        
+        <br />
+        <label for="last_name">Last Name:</label>
+        <br />
+        <input type="text" name="last_name" placeholder="Rivard" required/>
+
+        <br />
+        <label for="email">Email:</label>
+        <br />
+        <input type="email" name="email" required></textarea>
+  
+        <br />
+        <label for="comment">Comment:</label>
+        <br />
+        <textarea name="comment" cols="100" rows="10" required></textarea>
+        <br />
+        <button title="button">Submit</button>
+        <br />
+     </fieldset>
+    </form>
+
+  </body>
+</html>
