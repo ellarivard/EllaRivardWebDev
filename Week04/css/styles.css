@@ -1,0 +1,215 @@
+/* GLOBAL STYLES */
+
+*{
+    /* dont have to worry about 0 for margin and padding w flexbox*/
+    box-sizing: border-box;
+    /* always put this ^ */
+}
+
+body {
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* FLEXBOX SIMPLE ROW LAYOUTS */
+
+/* BASE STYLES */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* some styles to see all containers */
+    min-height: 400px;
+    border: 1px solid purple;
+    background-color: rgba(255, 0, 255, 0.3);
+}
+
+.item {
+    border: 1px solid blue;
+    background-color: rgba(0, 0, 255, 0.3);
+    width: 23%;
+    height: 300px;
+}
+
+/* ATOMIC STYLES */
+/* small as possible, maximum reusability */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-even {
+    justify-content: space-evenly;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-stretch {
+    align-items: stretch;
+}
+
+/* flex item style atoms */
+
+.self-start {
+    align-self: flex-start;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-stretch {
+    align-self: stretch;
+    height: auto;
+    /* break established height or else cant stretch */
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+    /* @ = responsive breakpoint */
+    /* like if statement, if media = screen and max width = 768, ... */
+    .container {
+        flex-direction: column;
+        /* get all flex items within container to stretch */
+        align-items: stretch;
+    }
+    /* override fixed width of 300px to stretch in columns */
+    .item {
+        height: 300px;
+        width: auto;
+        margin: 1rem 0.5rem;
+    }
+}
+
+/* classic layout example */
+header {
+    /* display: flex; */
+    width: 100%;
+    min-height: 100px;
+    background-color: aqua;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: darkcyan;
+}
+
+.grid-item {
+    width: 23%;
+    margin: 1%;
+}
+
+.secondary-nav {
+    min-width: 25%;
+    background-color: aquamarine;
+}
+
+/* ul.menu or just menu */
+.menu {
+    /* remove list defaults */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    border-bottom: 1px solid grey;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.menu a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: coral;
+}
+
+footer h2 {
+    margin: 0;
+    padding: 1rem;
+}
+
+/* ipad size */
+@media screen and (max-width: 1024px) {
+    .grid-item {
+        width: 48%;
+    }
+}
+
+/* phone size */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .secondary-nav {
+        order: 1;
+        /* must be flex */
+    }
+    .grid-container {
+        order: 2;
+        flex-direction: column;
+        /* order everything */
+    }
+    .grid-item {
+        width: 95%;
+    }
+}

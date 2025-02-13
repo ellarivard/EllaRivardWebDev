@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Navbar</title>
+    
+    <style type="text/CSS">
+
+      *{
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      header{
+        width: 100%;
+        background-color: cornflowerblue;
+      }
+
+      /* space important, looking for nav tag with id of main-nav and then ul tags within*/
+      nav#main-nav ul {
+        /* remove all bullet points */
+        list-style-type: none;
+        overflow: hidden;
+
+        /* since using inline block, need to zero font size */
+        font-size:0;
+
+      }
+
+      #main-nav ul li {
+        /* li display block by default, they want to take 100% width up and not share horizontal space */
+        display: inline-block;
+        font-size: 1rem;
+      }
+
+      li a {
+        /* dont display block by default */
+        display: block;
+        text-align: center;
+        width: 100px;
+        padding: 10px;
+        text-decoration: none;
+        color: chartreuse;
+      }
+
+      li a:hover{
+        background-color: rgba(0,0,0,0.1);
+        color: #fff;
+      }
+
+    </style>
+
+
+  </head>
+
+  <body>
+
+    <header>
+      <!-- <h1>Brand Logo</h1> -->
+      <nav id="main-nav">
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  </body>
+
+</html>
