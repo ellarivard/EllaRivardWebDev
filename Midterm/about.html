@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Main</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Schoolbell&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+        <!-- contact button -->
+        <a href="#contact-form-popup" id="contact-button">talk to me</a>
+
+        <!-- contact form popup -->
+        <!-- <div id="contact-form-popup" class="popup">
+          <div class="popup-content">
+            <a href="#" class="close">&times;</a>
+            <form>
+              <label for="name">what's your name?</label>
+              <input type="text" id="name" name="name" required>
+              <label for="email">where can i reach you at?</label>
+              <input type="email" id="email" name="email" required>
+              <label for="message">leave a little note!</label>
+              <input type="message" id="message" name="message" required>
+              <button type="submit" id="send-button">send!</button>
+            </form>
+          </div>
+        </div> -->
+
+        <div id="contact-form-popup" class="popup">
+          <div class="popup-content">
+            <a href="#" class="close">&times;</a>
+          <h1>talk to me!</h1>
+          <form action="https://formspree.io/f/maneyder" method="POST">
+            <div class="row">
+              <label for="name" class="label-lg">name:</label>
+              <input type="text" name="name" class="input-lg" required />
+    
+              <label for="email" class="label-lg">email:</label>
+              <input type="email" name="email" class="input-lg" required />
+            </div>
+    
+            <div class="message-area">
+              <label for="message">leave a message:</label>
+              <textarea
+                class="message"
+                name="message"
+                placeholder="Leave a comment or question here."
+                required
+              ></textarea>
+            </div>
+            <div class="button-bar">
+              <button class="btn-dark" type="submit">Send</button>
+            </div>
+            <input
+              name="subject"
+              type="hidden"
+              value="New submission from {{name}}"
+            />
+          </form>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- logo -->
+    <header class="main-header">
+        <!-- <h1>EllaBellaBoBella</h1> -->
+        <a href="./index.html">ella grace</a>
+      </header>
+
+    <!-- nav bar -->
+    <header>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="./about.html">about</a></li>
+          <li><a href="./art.html">art</a></li>
+          <li><a href="./design.html">design</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+
+    <div class="title-container">
+      <!-- <h2>art</h2> -->
+      <p>about about about im gonna write something here maybe</p>
+    </div>
+
+
+    <div class="about-container">
+      <div class="about-item">
+        <!-- picture -->
+        <img src="./img/me.jpeg" alt="image 1">
+      </div>
+      <div class="about-item">
+        <!-- <h2>about</h2> -->
+        <p>Donec ex quam, ultricies ac elit nec, dapibus accumsan nisl. Mauris vehicula placerat sollicitudin. Maecenas gravida non libero ac fermentum. Vivamus eu lacus eget tellus ultrices mattis quis mattis nibh. Sed rutrum venenatis pellentesque. Nunc eu dictum ante. Nullam dapibus, lectus eget facilisis consequat, ipsum lacus semper elit, venenatis auctor justo justo fringilla felis.
+          
+          Vivamus porta eget arcu ut sagittis. Etiam nisi est, aliquam placerat facilisis in, blandit vel purus. Sed ac dui finibus, auctor metus sed, dignissim lectus. Nam at sem ligula. Nullam quis pretium diam, rhoncus suscipit eros. Cras augue ante, interdum eu cursus sed, semper vitae velit. Praesent ac libero eu arcu tincidunt rhoncus. Ut feugiat dolor ac dignissim ornare. Morbi quis egestas dolor, non suscipit tellus. Suspendisse potenti. Vivamus feugiat turpis sed ullamcorper accumsan. Fusce consequat, lorem in viverra pharetra, ex orci volutpat elit, in pharetra est sem non lacus. In tellus leo, mollis a tincidunt ut, malesuada feugiat justo.</p>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Main</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Schoolbell&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+        <!-- contact button -->
+        <a href="#contact-form-popup" id="contact-button">talk to me</a>
+
+        <!-- contact form popup -->
+        <!-- <div id="contact-form-popup" class="popup">
+          <div class="popup-content">
+            <a href="#" class="close">&times;</a>
+            <form>
+              <label for="name">what's your name?</label>
+              <input type="text" id="name" name="name" required>
+              <label for="email">where can i reach you at?</label>
+              <input type="email" id="email" name="email" required>
+              <label for="message">leave a little note!</label>
+              <input type="message" id="message" name="message" required>
+              <button type="submit" id="send-button">send!</button>
+            </form>
+          </div>
+        </div> -->
+        <div id="contact-form-popup" class="popup">
+          <div class="popup-content">
+            <a href="#" class="close">&times;</a>
+          <h1>talk to me!</h1>
+          <form action="https://formspree.io/f/maneyder" method="POST">
+            <div class="row">
+              <label for="name" class="label-lg">name:</label>
+              <input type="text" name="name" class="input-lg" required />
+    
+              <label for="email" class="label-lg">email:</label>
+              <input type="email" name="email" class="input-lg" required />
+            </div>
+    
+            <div class="message-area">
+              <label for="message">leave a message:</label>
+              <textarea
+                class="message"
+                name="message"
+                placeholder="Leave a comment or question here."
+                required
+              ></textarea>
+            </div>
+            <div class="button-bar">
+              <button class="btn-dark" type="submit">Send</button>
+            </div>
+            <input
+              name="subject"
+              type="hidden"
+              value="New submission from {{name}}"
+            />
+          </form>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    <!-- logo -->
+    <header class="main-header">
+        <!-- <h1>EllaBellaBoBella</h1> -->
+        <a href="./index.html">ella grace</a>
+    </header>
+
+    <!-- nav bar -->
+    <header>
+      <nav id="main-nav">
+        <ul>
+            <li><a href="./about.html">about</a></li>
+            <li><a href="./art.html">art</a></li>
+            <li><a href="./design.html">design</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <!-- <h2>design</h2>
+    <p>Here are some of my design pieces. I hope you enjoy them!</p> -->
+
+    <!-- <div class="container">
+      <h2 class="object" data-value="3">Space<br><span>Background</span></h2>
+      <img src="./img/design/des1.png" class="object" data-value="-2" alt="">
+      <img src="./img/design/des2.png" class="object" data-value="6" alt="">
+      <img src="./img/design/des3.jpeg" class="object" data-value="4" alt="">
+      <img src="./img/design/des4.png" class="object" data-value="-6" alt="">
+      <img src="./img/design/des5.png" class="object" data-value="8" alt="">
+      <img src="./img/design/des6.png" class="object" data-value="-4" alt="">
+      <img src="./img/design/des7.png" class="object" data-value="5" alt="">
+      <img src="./img/design/des8.png" class="object" data-value="-9" alt="">
+      <img src="./img/design/des9.png" class="object" data-value="-5" alt="">
+    </div> -->
+
+  <div class="title-container">
+    <!-- <h2>art</h2> -->
+    <p>design design design im gonna write something here maybe</p>
+  </div>
+
+  <!-- <div class="work-container">
+    <div class="work">
+      <p>me + my camera</p>
+      <img src="./img/design/1.png">
+    </div>
+  </div> -->
+
+
+  <div class="work-container">
+    <div class="work">
+      <!-- <p>me + my camera</p> -->
+      <img src="./img/design/1.png">
+    </div>
+    <div class="work">
+      <!-- <p>ice cream!</p> -->
+      <img src="./img/design/2.png">
+      </div>
+    <div class="work">
+      <!-- <p>the isabellas</p> -->
+      <img src="./img/design/3.png">
+    </div>
+    <div class="work">
+      <!-- <p>the isabellas (again!)</p> -->
+      <img src="./img/design/4.png">
+    </div>
+    <div class="work">
+      <!-- <p>sunflowerss (harry styles? hello)</p> -->
+      <img src="./img/design/5.png">
+    </div>
+    <div class="work">
+      <!-- <p>halloween! (guess our costumes)</p> -->
+      <img src="./img/design/6.png">
+    </div>
+    <div class="work">
+      <!-- <p>halloween! (guess our costumes)</p> -->
+      <img src="./img/design/7.png">
+    </div>
+    <div class="work">
+      <!-- <p>halloween! (guess our costumes)</p> -->
+      <img src="./img/design/8.png">
+    </div>
+    </div>
+
+  </body>
+</html>
