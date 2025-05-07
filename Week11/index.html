@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JS Objects and JSON</title>
+    <script type="text/javascript">
+      // initialize a new object and store it as a variable names customer
+      const customer = {
+        name: 'Tony',
+        age: 23,
+        married: false,
+        pets: ['dog', 'cat', 'iguana'],
+        siblings: [
+          {name: 'Mary', age: 32, married: false,},
+          {name: 'Billy', age: 16, married: true,},
+        ],
+      }
+
+      // reassign the value for the name property
+    //   customer.name = 'Anthony'
+
+      var keyToAccess = 'name'
+      // sometimes need to pass in a variable instead of a key so dot notation wont work
+    //   customer.siblings[0][keyToAccess]
+
+      // we can add new fields with values any time
+    //   customer.height = 60
+
+    const customerJSON = JSON.stringify(customer)
+    
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

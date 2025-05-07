@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>main</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Schoolbell&display=swap" rel="stylesheet">
+    <style>
+      /* responsive styles */
+      @media (max-width: 768px) {
+
+      }
+    </style>
+  </head>
+  <body>
+    <!-- contact button -->
+    <a href="#contact-form-popup" id="contact-button" class="btn btn-outline-primary">talk to me</a>
+
+    <!-- contact form popup -->
+    <div id="contact-form-popup" class="popup">
+      <div class="popup-content">
+        <a href="#" class="close">&times;</a>
+        <h1>talk to me!</h1>
+        <form action="https://formspree.io/f/maneyder" method="POST">
+          <div class="row">
+            <label for="name" class="label-lg">name:</label>
+            <input type="text" name="name" class="input-lg" required />
+            <label for="email" class="label-lg">email:</label>
+            <input type="email" name="email" class="input-lg" required />
+          </div>
+          <div class="message-area">
+            <label for="message">leave a message:</label>
+            <textarea class="message" name="message" placeholder="leave a comment or question here." required></textarea>
+          </div>
+          <div class="button-bar">
+            <button class="btn-dark" type="submit">send</button>
+          </div>
+          <input name="subject" type="hidden" value="new submission from {{name}}" />
+        </form>
+      </div>
+    </div>
+
+    <!-- navigation -->
+    <header>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="./about.html">about</a></li>
+          <li><a href="./art.html">art</a></li>
+          <li><a href="./design.html">design</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- main header -->
+    <header class="big-header">
+      <a href="./index.html" id="logo">
+        <span>e</span><span>l</span><span>l</span><span>a</span>
+        <span> </span>
+        <span>g</span><span>r</span><span>a</span><span>c</span><span>e</span>
+      </a>
+    </header>
+
+    <!-- include bootstrap js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
+      gsap.from('.work, .art', {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2, 
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script>
+      // dynamically load the contact form
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("./contact-form.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.body.insertAdjacentHTML("beforeend", html);
+
+            // prevent interaction with background when popup 
+            const popup = document.getElementById("contact-form-popup");
+            const closeBtn = popup.querySelector(".close");
+            const body = document.body;
+
+            closeBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              popup.style.display = "none";
+              body.classList.remove("no-scroll");
+            });
+
+            document.getElementById("contact-button").addEventListener("click", function (e) {
+              e.preventDefault();
+              popup.style.display = "flex";
+              body.classList.add("no-scroll");
+            });
+          });
+      });
+    </script>
+    <script>
+  
+      (function () {
+        "use strict";
+        const forms = document.querySelectorAll(".needs-validation");
+        Array.from(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+    <script>
+      document.querySelector('.toggle-colors-btn').addEventListener('click', () => {
+        document.querySelectorAll('*').forEach((el) => {
+          const styles = getComputedStyle(el);
+          if (styles.backgroundColor === 'rgb(255, 64, 0)') {
+            el.style.backgroundColor = '#ffa2d8'; // switch orange to pink
+          } else if (styles.backgroundColor === 'rgb(255, 162, 216)') {
+            el.style.backgroundColor = '#ff4000'; // switch pink to orange
+          }
+          if (styles.color === 'rgb(255, 64, 0)') {
+            el.style.color = '#ffa2d8'; // switch orange text to pink
+          } else if (styles.color === 'rgb(255, 162, 216)') {
+            el.style.color = '#ff4000'; // switch pink text to orange
+          }
+        });
+      });
+    </script>
+
+    <script>
+      gsap.from("#logo span", {
+        opacity: 0,        // start invisible
+        y: 50,             // start below the original position
+        duration: 0.5,     // duration for each letter
+        stagger: 0.1,      // delay between each letter's animation
+        ease: "power2.out" // smooth easing
+      });
+    </script>
+  </body>
+</html>

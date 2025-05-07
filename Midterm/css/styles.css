@@ -41,6 +41,7 @@ html {
   
   body {
     font-family: "Bagel Fat One", system-ui;
+    background-image: url(../img/white_paperboard.png);
   }
 
   img {

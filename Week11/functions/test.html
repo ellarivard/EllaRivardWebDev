@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kitten Sorting Game</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    canvas {
+      display: block;
+      margin: auto;
+      border: 2px solid #ccc;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="gameCanvas" width="1280" height="720"></canvas>
+
+<script>
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+
+  let objects = [];
+  let bins = [];
+  let treats = 0;
+  let gameEnded = false;
+  let spawnInterval = 5000;
+  let lastSpawnTime = Date.now();
+
+  let mouseX = 0, mouseY = 0;
+  let draggingObject = null;
+
+  const images = {
+    kitten: new Image(),
+    trashBin: new Image(),
+    recyclingBin: new Image(),
+    toyBin: new Image(),
+    cafe: new Image()
+  };
+
+  images.kitten.src = "kitten.png";
+  images.trashBin.src = "trashbin.png";
+  images.recyclingBin.src = "recyclingbin.png";
+  images.toyBin.src = "toybin.png";
+  images.cafe.src = "cafe.jpg";
+
+  canvas.addEventListener("mousemove", (e) => {
+    mouseX = e.offsetX;
+    mouseY = e.offsetY;
+    if (draggingObject) {
+      draggingObject.x = mouseX + draggingObject.offsetX;
+      draggingObject.y = mouseY + draggingObject.offsetY;
+    }
+  });
+
+  canvas.addEventListener("mousedown", () => {
+    for (let obj of objects) {
+      if (obj.isMouseInside(mouseX, mouseY)) {
+        draggingObject = obj;
+        obj.dragging = true;
+        obj.offsetX = obj.x - mouseX;
+        obj.offsetY = obj.y - mouseY;
+        break;
+      }
+    }
+  });
+
+  canvas.addEventListener("mouseup", () => {
+    if (draggingObject) {
+      draggingObject.dragging = false;
+      draggingObject.checkPlacement();
+      draggingObject = null;
+    }
+  });
+
+  class DraggableObject {
+    constructor(x, y, r, type, color) {
+      this.x = x;
+      this.y = y;
+      this.r = r;
+      this.type = type;
+      this.color = color;
+      this.dragging = false;
+      this.offsetX = 0;
+      this.offsetY = 0;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.fillStyle = this.color;
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    isMouseInside(mx, my) {
+      return Math.hypot(mx - this.x, my - this.y) < this.r;
+    }
+
+    checkPlacement() {
+      for (let bin of bins) {
+        if (bin.isInside(this.x, this.y)) {
+          if (bin.type === this.type) {
+            treats++;
+          } else {
+            treats -= 2;
+          }
+          return;
+        }
+      }
+    }
+  }
+
+  class Bin {
+    constructor(x, y, type, img) {
+      this.x = x;
+      this.y = y;
+      this.type = type;
+      this.img = img;
+      this.w = 100;
+      this.h = 100;
+    }
+
+    draw() {
+      ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
+    }
+
+    isInside(x, y) {
+      return (
+        x > this.x && x < this.x + this.w &&
+        y > this.y && y < this.y + this.h
+      );
+    }
+  }
+
+  function getColorForType(type) {
+    if (type === "trash") return "rgb(200, 100, 100)";
+    if (type === "recycling") return "rgb(100, 200, 100)";
+    if (type === "toys") return "rgb(100, 150, 250)";
+  }
+
+  function spawnNewObject() {
+    const type = ["trash", "recycling", "toys"][Math.floor(Math.random() * 3)];
+    const color = getColorForType(type);
+    const obj = new DraggableObject(
+      Math.random() * (canvas.width - 100) + 50,
+      Math.random() * (canvas.height - 300) + 400,
+      20,
+      type,
+      color
+    );
+    objects.push(obj);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(images.cafe, 0, 0, canvas.width, canvas.height);
+
+    for (let bin of bins) {
+      bin.draw();
+    }
+
+    for (let obj of objects) {
+      obj.draw();
+    }
+
+    ctx.fillStyle = "black";
+    ctx.font = "24px Arial";
+    ctx.fillText("Treats: " + treats, 20, 40);
+
+    ctx.drawImage(images.kitten, mouseX - 20, mouseY - 20, 100, 100);
+
+    if (Date.now() - lastSpawnTime > spawnInterval) {
+      spawnNewObject();
+      lastSpawnTime = Date.now();
+    }
+
+    if (treats < 0) {
+      gameEnded = true;
+      setTimeout(resetGame, 3000);
+    }
+
+    if (gameEnded) {
+      ctx.fillStyle = "rgba(0,0,0,0.6)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "red";
+      ctx.font = "48px Arial";
+      ctx.textAlign = "center";
+      ctx.fillText("Game Over", canvas.width / 2, canvas.height / 2);
+      return;
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  function initializeGame() {
+    objects = [];
+    bins = [];
+
+    bins.push(new Bin(450, 410, "trash", images.trashBin));
+    bins.push(new Bin(30, 600, "recycling", images.recyclingBin));
+    bins.push(new Bin(1000, 520, "toys", images.toyBin));
+
+    draw();
+  }
+
+  function resetGame() {
+    treats = 0;
+    gameEnded = false;
+    initializeGame();
+  }
+
+  images.cafe.onload = () => {
+    initializeGame();
+  };
+</script>
+
+</body>
+</html>
+<!-- Compare this snippet from Week11/helloworld.html: -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" -->
+<!--     integrity="sha384-7+Q2x5g1v3e4z5f5c
+<!--     crossorigin="anonymous" -->
+<!--     ></script> -->     

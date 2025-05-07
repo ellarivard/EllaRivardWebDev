@@ -1,0 +1,685 @@
+/* Custom Alert Styles */
+.alert-primary {
+  background-color: #ffa2d8; /* Custom pink background */
+  color: white; /* White text */
+  border-color: #ff80c0; /* Slightly darker pink for the border */
+}
+
+.alert-primary .btn-close {
+  color: white; /* White close button */
+  opacity: 1; /* Make the close button fully visible */
+}
+
+.alert-primary .btn-close:hover {
+  color: #ff80c0; /* Slightly darker pink on hover */
+}
+
+/* Fonts */
+.schoolbell-regular {
+  font-family: "Schoolbell", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bagel-fat-one-regular {
+  font-family: "Bagel Fat One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Bootstrap Overrides */
+:root {
+  --bs-primary: #ff4000;
+  --bs-secondary: #ffa2d8;
+  --bs-body-font-family: "Schoolbell", cursive;
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  font-family: var(--bs-body-font-family);
+}
+
+.btn-primary:hover {
+  background-color: #e63900;
+  border-color: #e63900;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: lowercase; /* Force all text to lowercase */
+}
+
+html, body {
+  margin: 0;
+  background-color: white;
+  font-family: "Bagel Fat One", system-ui;
+  background-image: url(../img/white_paperboard.png);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Schoolbell", cursive;
+}
+
+p {
+  font-family: "Schoolbell", cursive;
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Buttons */
+#contact-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  color: #ff4000;
+  border: 2px solid #ff4000;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  font-family: "Schoolbell", cursive;
+}
+
+#contact-button:hover {
+  background-color: #ff4000; /* Orange background */
+  color: white; /* White text */
+  border-color: #ff4000; /* Match border to background */
+}
+
+#send-button {
+  padding: 5px 20px;
+  background-color: #ff4000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Schoolbell", cursive;
+}
+
+/* Popups */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.popup-content {
+  max-width: 500px;
+  width: 90%;
+}
+
+.close {
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.popup:target {
+  display: block;
+}
+
+.popup-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 1000px;
+  font-family: "Schoolbell", cursive;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer;
+}
+
+/* Header */
+header {
+  width: 100%;
+  background-color: #ffa2d8ff;
+  display: flex;
+  justify-content: center;
+}
+
+header.main-header {
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+header.main-header a {
+  font-size: 5rem;
+  color: #ff4000;
+  text-decoration: none;
+}
+
+header.big-header {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+header.big-header a {
+  font-size: 15rem;
+  color: #ff4000;
+  text-decoration: none;
+}
+
+/* Navigation */
+nav#main-nav ul {
+  list-style-type: none;
+  overflow: hidden;
+  font-size: 0;
+}
+
+nav#main-nav ul li {
+  display: inline-block;
+  font-size: 1.5rem;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  width: 100px;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+li a:hover {
+  color: #ff4000;
+  animation: wiggle 0.5s ease-in-out;
+}
+
+/* Galleries */
+.galleries-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 25vh;
+  overflow: auto;
+  white-space: nowrap;
+  background-color: #ff4000;
+  padding: 10px;
+}
+
+.gallery img {
+  max-width: 20%;
+  height: auto;
+  padding: 50px;
+}
+
+/* Work Section */
+.work-container {
+  display: flex; /* Use Flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping to the next row */
+  justify-content: space-between; /* Add space between cards */
+  gap: 20px; /* Add spacing between cards */
+  width: 1000px;
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Optional: Add padding around the container */
+}
+
+/* Card styles */
+.card {
+  flex: 1 1 calc(33.333% - 20px); /* 3 columns: 33.333% width minus gap */
+  max-width: calc(33.333% - 20px); /* Ensure cards don't exceed 3 columns */
+  margin: 0; /* Remove extra margins */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); Optional: Add shadow */
+  border-radius: 10px; /* Optional: Rounded corners */
+  overflow: hidden; /* Ensure content stays within the card */
+}
+
+.work {
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  box-shadow: 10px 10px 2px rgba(255, 0, 149, 0.5);
+}
+
+.work img {
+  border: 10px solid white;
+}
+
+.work p {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 10px;
+  width: 260px;
+  text-align: center;
+  color: white;
+}
+
+.work:hover {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+/* Art container styles */
+.art-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to the next row */
+  justify-content: space-between; /* Add space between columns */
+  gap: 20px; /* Add spacing between cards */
+  width: 100%;
+  margin: 0 auto;
+  padding: 70px; /* Add padding around the container */
+}
+
+/* Art card styles */
+.art {
+  flex: 1 1 calc(50% - 20px); /* 2 columns: 50% width minus gap */
+  max-width: calc(50% - 20px); /* Ensure cards don't exceed 2 columns */
+  margin: 0; /* Remove extra margins */
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  background-color: #ffa2d8; /* Pink background */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  text-align: center; /* Center-align text */
+}
+
+/* Images inside the card */
+.art img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Add spacing between image and text */
+}
+
+.art p {
+  font-size: 1rem;
+  color: white;
+  margin: 0;
+}
+
+/* .art:hover {
+  animation: wiggle 0.5s ease-in-out;
+} */
+
+/* Art card styles */
+.art.card {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  flex-direction: column; /* Stack image and text vertically */
+  background-color: transparent; /* Remove the pink background */
+  border: none; /* Remove any border */
+  overflow: hidden; /* Ensure content stays within the card */
+  position: relative;
+  text-align: center; /* Center-align text */
+  padding: 20px; /* Optional: Add spacing */
+}
+
+/* Inner card styles */
+.card-inner {
+  position: relative; /* Establish a positioning context for child elements */
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 0.6s; /* Smooth flipping animation */
+}
+
+/* Front side of the card */
+.card-front {
+  position: absolute; /* Position it relative to .card-inner */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back when the front is visible */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  flex-direction: column; /* Stack image and text vertically */
+}
+
+/* Images inside the card */
+.card-front img {
+  max-width: 80%; /* Ensure the image doesn't exceed 80% of the card's width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Add spacing between the image and text */
+}
+
+/* Back side of the card */
+.card-back {
+  backface-visibility: hidden; /* Hide the front when the back is visible */
+  transform: rotateY(180deg); /* Flip the back side */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center-align text */
+  background-color: transparent; /* Remove the pink background */
+  color: #ff4000; /* Set text color to orange from your palette */
+  padding: 20px; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding in dimensions */
+}
+
+/* Text inside the card-back */
+.card-back p {
+  color: #ff4000; /* Set text color to orange */
+  font-size: 1rem; /* Adjust font size */
+  margin: 0; /* Remove extra margin */
+}
+
+/* Flip effect on hover */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.title-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  background-color: #ff4000; /* Orange background */
+  display: flex;
+  justify-content: center; /* Center the banner horizontally */
+  align-items: center; /* Center the banner vertically */
+}
+
+.scrolling-banner {
+  display: inline-block;
+  animation: scroll 10s linear infinite;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scrolling-banner p {
+  display: inline-block;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 400px;
+  justify-content: space-around;
+  align-items: center;
+  margin: 100px auto;
+  color: #ff4000;
+}
+
+.about-item {
+  width: 43%;
+  height: 600px;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: flex-start; /* Align content to the left */
+  gap: 20px; /* Add spacing between the text and button */
+}
+
+.about-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Animations */
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  25% {
+    transform: rotate(-5deg) translate(-5px, -5px);
+  }
+  50% {
+    transform: rotate(5deg) translate(5px, -10px);
+  }
+  75% {
+    transform: rotate(-5deg) translate(-5px, -5px);
+  }
+  100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  nav#main-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav#main-nav ul li {
+    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header.big-header a {
+    font-size: 8rem;
+  }
+
+
+  /* .work-container, .art-container {
+    width: 100%;
+    margin: 20px auto;
+  } */
+
+  .work-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1rem;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .work, .art {
+    width: 45%;
+    margin: 2.5%;
+  }
+
+  .work img, .art img {
+    width: 100%;
+    height: auto;
+  }
+
+  #contact-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  .title-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .art {
+    flex: 1 1 calc(100% - 20px); /* 1 column for small screens */
+    max-width: calc(100% - 20px);
+  }
+
+  .art-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .art.card {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-item {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* Resume Popup */
+#resume-popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+#resume-popup .popup-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 900px;
+  height: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  font-family: "Schoolbell", cursive;
+}
+
+#resume-popup .popup-content .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.resume-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Ensure the link covers the entire work container */
+.work-link {
+  display: inline-block;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color */
+}
+
+.work-link .work {
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Style for the textarea */
+textarea#message {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea#message {
+  width: 100% !important;
+  height: 150px !important;
+  resize: none !important;
+  margin-top: 10px !important;
+  padding: 10px !important;
+  font-size: 1rem !important;
+  border: 1px solid #ced4da !important;
+  border-radius: 5px !important;
+  box-sizing: border-box !important;
+}
+
+.toggle-colors-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #ff4000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Schoolbell", cursive;
+  z-index: 1000;
+}
+
+.toggle-colors-btn:hover {
+  background-color: #e63900; 
+}
